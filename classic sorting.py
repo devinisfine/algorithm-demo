@@ -20,7 +20,7 @@ def merge(arr,l,mid,r):
     k = l
     i = 0
     j = 0
-    while k<= r and i < len(left) and j< len(right):
+    while i < len(left) and j< len(right):
         if left[i] < right[j]:
             arr[k] = left[i]
             k += 1
@@ -44,7 +44,7 @@ def mergeSort(arr,l,r):
         mergeSort(arr,l,mid)
         mergeSort(arr,mid+1,r)
         merge(arr,l,mid,r)
-    return arr
+    return arr  #return arr可有可无
 
 
 
@@ -68,7 +68,7 @@ def quickSort(arr,l,r):
         arr[i] = pivot
     quickSort(arr,l,i-1)
     quickSort(arr,i+1,r)
-    return arr
+    return arr #当不需要返回值，return arr 可有可无，此时的arr本身就已经拍好了序，可以直接quicksort(x);print(x);无需x=quicksort(x)这一句
 
 x=[1,7,6,5,4,3,100,99,200,33]
 x=quickSort(x,0,len(x)-1)
